@@ -5,6 +5,7 @@
 build
 
 .metadata
+.mvn/
 bin/
 tmp/
 *.tmp

@@ -122,11 +122,6 @@ public class Cliente {
 					+ "Padrões suportados: nota de corretagem de operações na BM&F e Bovespa. \n"
 					+ "Testado para as corretoras: Rico e Clear" );
 		} else {
-			ArrayList<NotaNegociacao> notas = NotaNegociacaoHelper.getNotas(notasNegociacao, NotaNegociacaoBMF.class);
-	    	if(!notas.isEmpty()) {
-	    		new Relatorio(OUTPUT_FOLDER).gerarRelatorio(NotaNegociacaoHelper.getNotas(notasNegociacao, NotaNegociacaoBMF.class));
-	    		
-	    	}
 		} 
 		System.out.println("Total de nota(s) encontradas: " + notasNegociacao.size() );
 		System.out.println("Arquivos gerados: ");

@@ -1,4 +1,4 @@
-package sinacorpdfparser;
+package br.com.fabiophx.sinacorpdfparser;
 
 import java.util.ArrayList;
 import java.util.List;

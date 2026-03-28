@@ -1,4 +1,4 @@
-package sinacorpdfparser;
+package br.com.fabiophx.sinacorpdfparser;
 
 public interface Operacoes {
 

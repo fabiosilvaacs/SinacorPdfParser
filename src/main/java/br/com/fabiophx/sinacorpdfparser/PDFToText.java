@@ -1,4 +1,4 @@
-package sinacorpdfparser;
+package br.com.fabiophx.sinacorpdfparser;
 
 import java.io.File;
 import java.io.IOException;

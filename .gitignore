@@ -7,6 +7,7 @@ build
 .metadata
 .mvn/
 .target/
+target/
 bin/
 tmp/
 *.tmp

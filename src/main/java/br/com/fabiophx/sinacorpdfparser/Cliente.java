@@ -98,7 +98,6 @@ public class Cliente {
 			return formatter.parse(n1.getDataPregao()).compareTo(
 					formatter.parse(n2.getDataPregao()));
 		} catch (ParseException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return 0;

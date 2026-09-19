@@ -4,10 +4,16 @@
 # Ignore Gradle build output directory
 build
 
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+src/main/resources/notas
+
 .metadata
 .mvn/
 .target/
-target/
 bin/
 tmp/
 *.tmp

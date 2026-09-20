@@ -1,33 +1,31 @@
 package br.com.fabiophx.sinacorpdfparser;
 
+import static br.com.fabiophx.TestUtils.getPath;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertInstanceOf;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-import java.net.URISyntaxException;
 import java.nio.file.Path;
 import java.util.List;
 
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
 class ParserBMFTest {
 
-	@Test
-	void deveLerNotaBmfEExtrairTotalLiquidoDaNota() throws Exception {
-		Path pdf = resourcePath("notas/20260326_bmf.pdf");
+	@ParameterizedTest
+	@CsvSource({
+		"notas/bmf_1page.pdf, 232.16",
+		"notas/bmf_1page_loss.pdf, -302.60"
+	})
+	void showReadNotaBmfAndExtractTotal(String filePath, Double expectedTotal) throws Exception {
+		Path pdf = getPath(filePath);
 
-		String texto = new PDFToText(pdf.toString(), null).getText();
+		String texto = new PDFToText(pdf, null).getText();
 		List<NotaNegociacao> notas = new ParserBMF().find(texto).getNotas();
-
 		assertEquals(1, notas.size());
-		NotaNegociacaoBMF nota = assertInstanceOf(NotaNegociacaoBMF.class, notas.get(0));
-		assertNotNull(nota.getTotalLiquidoDaNota());
-		assertEquals(232.16, nota.getTotalLiquidoDaNota(), 0.001);
-	}
 
-	private static Path resourcePath(String resource) throws URISyntaxException {
-		var url = ParserBMFTest.class.getClassLoader().getResource(resource);
-		assertNotNull(url, "Recurso não encontrado: " + resource);
-		return Path.of(url.toURI());
+		NotaNegociacao nota = assertInstanceOf(NotaNegociacaoBMF.class, notas.getFirst());
+		assertEquals(expectedTotal, nota.getTotal());
 	}
 }

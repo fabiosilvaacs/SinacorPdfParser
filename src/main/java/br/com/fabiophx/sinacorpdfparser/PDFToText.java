@@ -1,5 +1,6 @@
 package br.com.fabiophx.sinacorpdfparser;
 
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Path;
 
@@ -10,8 +11,12 @@ public class PDFToText {
 	
 	private PDDocument document;
 
-	public PDFToText(String filePath, String password) throws IOException {
-		document = PDDocument.load(Path.of(filePath).toFile(), password);
+	public PDFToText(Path path, String password) throws IOException {
+		this(path.toFile(), password);
+	}
+
+	public PDFToText(File file, String password) throws IOException {
+		document = PDDocument.load(file, password);
 	}
 	
 	public String getText() throws IOException {

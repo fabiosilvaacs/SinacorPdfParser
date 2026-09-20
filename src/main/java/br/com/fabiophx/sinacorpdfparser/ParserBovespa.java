@@ -1,6 +1,7 @@
 package br.com.fabiophx.sinacorpdfparser;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -11,7 +12,8 @@ public class ParserBovespa implements Parser {
 	public ParserBovespa() {
 		notas = new ArrayList<NotaNegociacao>();
 	}
-	
+
+	@Override
 	public Parser find(String text) {
 		String [] documentLines = text.split("\r\n|\r|\n");
 		
@@ -71,9 +73,9 @@ public class ParserBovespa implements Parser {
 		}
 		return amount;
 	}
-	
-	public ArrayList<NotaNegociacao> getNotas() {
+
+	@Override
+	public List<NotaNegociacao> getNotas() {
 		return notas;
 	}
-
 }

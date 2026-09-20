@@ -1,6 +1,7 @@
 package br.com.fabiophx.sinacorpdfparser;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ParserBMF implements Parser {
 	
@@ -9,7 +10,8 @@ public class ParserBMF implements Parser {
 	public ParserBMF() {
 		notas = new ArrayList<NotaNegociacao>();
 	}
-	
+
+	@Override
 	public Parser find(String text) {
 		String[] documentLines = text.split("\r\n|\r|\n");
 		
@@ -100,7 +102,8 @@ public class ParserBMF implements Parser {
 		return amount;
 	}
 
-	public ArrayList<NotaNegociacao> getNotas() {
+	@Override
+	public List<NotaNegociacao> getNotas() {
 		return notas;
 	}
 

@@ -9,7 +9,7 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 
-src/main/resources/notas
+src/main/resources/notas/*
 
 .metadata
 .mvn/

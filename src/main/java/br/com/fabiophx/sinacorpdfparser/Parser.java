@@ -1,6 +1,6 @@
 package br.com.fabiophx.sinacorpdfparser;
 
-import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Interface que deve ser implementada pelo parser.
@@ -8,9 +8,7 @@ import java.util.ArrayList;
 
 public interface Parser {
 	
-	ArrayList<NotaNegociacao> getNotas();
-	
+	List<NotaNegociacao> getNotas();
+
 	Parser find(String text);
-	
-	
 }

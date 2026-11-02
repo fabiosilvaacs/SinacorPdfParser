@@ -4,6 +4,14 @@ Objetivo: Extrair notas de negociacao Sinacor de arquivos pdf no formato Sinacor
 
 Fork de https://github.com/davidboto/SinacorPdfParser/.
 
+## Compilação e testes
+
+Requer JDK 25. Configure `JAVA_HOME` para o JDK 25 e execute:
+
+```powershell
+.\mvnw.cmd clean verify
+```
+
 ## Uso como dependência
 
 O projeto gera um JAR Maven comum e não depende de Spring Boot. 

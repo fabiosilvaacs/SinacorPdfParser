@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Path;
 
+import org.apache.pdfbox.Loader;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.text.PDFTextStripper;
 
@@ -14,7 +15,7 @@ public class PdfReader {
 	}
 
 	public static String getText(File pdf, String password) throws IOException {
-		PDDocument document = PDDocument.load(pdf, password);
+		PDDocument document = Loader.loadPDF(pdf, password);
 
 		try (document) {
 			// PDFTextStripperByArea stripperArea = new PDFTextStripperByArea();

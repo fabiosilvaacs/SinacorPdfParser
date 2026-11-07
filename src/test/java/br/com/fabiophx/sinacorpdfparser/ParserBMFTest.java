@@ -1,5 +1,7 @@
 package br.com.fabiophx.sinacorpdfparser;
 
+import java.math.BigDecimal;
+
 import static br.com.fabiophx.TestUtils.getPath;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -28,12 +30,12 @@ class ParserBMFTest {
 		"notas/bmf_1page.pdf, 232.16",
 		"notas/bmf_1page_loss.pdf, -302.60",
 	})
-	void showReadNotaBmfAndExtractTotal(String filePath, Double expectedTotal) throws Exception {
+	void showReadNotaBmfAndExtractTotal(String filePath, BigDecimal expectedTotal) throws Exception {
 		List<NotaNegociacao> notas = getNotas(filePath);
 		assertEquals(1, notas.size());
 
-		NotaNegociacao nota = assertInstanceOf(NotaNegociacaoBMF.class, notas.getFirst());
-		assertEquals(expectedTotal, nota.getTotal());
+		NotaNegociacaoBMF nota = assertInstanceOf(NotaNegociacaoBMF.class, notas.getFirst());
+		assertEquals(expectedTotal, nota.getTotalLiquidoNota());
 	}
 
 	@Test

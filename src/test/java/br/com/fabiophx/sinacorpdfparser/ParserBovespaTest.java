@@ -1,5 +1,7 @@
 package br.com.fabiophx.sinacorpdfparser;
 
+import java.math.BigDecimal;
+
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -26,7 +28,7 @@ public class ParserBovespaTest {
         "notas/bovespa_1page.pdf, 1086.21",
         "notas/bovespa_1page_debito.pdf, -355.09"
     })
-    void showReadNotaBovespaAndExtractTotal(String filePath, Double expectedTotal) throws Exception {
+    void showReadNotaBovespaAndExtractTotal(String filePath, BigDecimal expectedTotal) throws Exception {
         var path = getPath(filePath);
 
         String text = PdfReader.getText(path, null);
@@ -34,6 +36,6 @@ public class ParserBovespaTest {
         assertEquals(1, notas.size());
 
         NotaNegociacao nota = assertInstanceOf(NotaNegociacaoBovespa.class, notas.getFirst());
-        assertEquals(expectedTotal, nota.getTotal());
+        assertEquals(expectedTotal, nota.getTotalLiquido());
     }
 }

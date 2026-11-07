@@ -1,5 +1,7 @@
 package br.com.fabiophx.sinacorpdfparser;
 
+import java.math.BigDecimal;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -11,34 +13,29 @@ import lombok.ToString;
 @ToString()
 @NoArgsConstructor
 @AllArgsConstructor
-public class NotaNegociacaoBMF extends NotaNegociacao {
+public final class NotaNegociacaoBMF extends NotaNegociacao {
 
-	private String NrNotaNegociacao;
-	private Double VendaDisponivel;
-	private Double CompraDisponivel;
-	private Double VendaOpcoes;
-	private Double CompraOpcoes;
-	private Double ValorDosNegocios;
-	private Double IRRF;
-	private Double IRRFDayTrade;
-	private Double TaxaOperacional;
-	private Double TaxaRegistroBMF;
-	private Double TaxaBMF;
-	private Double OutrosCustos;
-	private Double Impostos;
-	private Double AjusteDePosicao;
-	private Double AjusteDayTrade;
-	private Double TotalDeCustosOperacionais;
-	private Double Outros;
-	private Double IRRFOpercaional;
-	private Double TotalContaInvestimento;
-	private Double TotalContaNormal;
-	private Double TotalLiquido;
-	private Double TotalLiquidoDaNota;
+	private BigDecimal vendaDisponivel;
 
-	@Override
-	public Double getTotal() {
-		return TotalLiquidoDaNota;
-	}
+	private BigDecimal compraDisponivel;
 
+	private BigDecimal IRRFDayTrade;
+
+	private BigDecimal taxasBMF;
+
+	private BigDecimal outrosCustos;
+
+	private BigDecimal ajustePosicao;
+
+	private BigDecimal ajusteDayTrade;
+
+	private BigDecimal totalCustosOperacionais;
+
+	private BigDecimal IRRFOperacional;
+
+	private BigDecimal totalContaInvestimento;
+
+	private BigDecimal totalContaNormal;
+
+	private BigDecimal totalLiquidoNota;
 }

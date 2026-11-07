@@ -20,6 +20,7 @@ public class PdfReader {
 		try (document) {
 			// PDFTextStripperByArea stripperArea = new PDFTextStripperByArea();
 			// stripperArea.setSortByPosition(true);
+
 			PDFTextStripper stripper = new PDFTextStripper();
 			int lastPage = document.getNumberOfPages();
 			stripper.setStartPage(1);
@@ -27,5 +28,4 @@ public class PdfReader {
 			return stripper.getText(document);
 		}
 	}
-	
 }

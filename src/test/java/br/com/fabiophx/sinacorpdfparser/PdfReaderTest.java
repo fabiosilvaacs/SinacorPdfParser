@@ -3,7 +3,7 @@ package br.com.fabiophx.sinacorpdfparser;
 import org.apache.pdfbox.pdmodel.encryption.InvalidPasswordException;
 import org.junit.jupiter.api.Test;
 
-import static br.com.fabiophx.TestUtils.getPath;
+import static br.com.fabiophx.sinacorpdfparser.ParserNotaUtils.getPath;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class PdfReaderTest {

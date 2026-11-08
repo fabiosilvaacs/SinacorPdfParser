@@ -4,16 +4,16 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ParserBMF implements Parser {
+public class ParserNotaBMF implements ParserNota {
 	
 	private ArrayList<NotaNegociacao> notas;
 
-	public ParserBMF() {
+	public ParserNotaBMF() {
 		notas = new ArrayList<>();
 	}
 
 	@Override
-	public Parser find(String text) {
+	public ParserNota find(String text) {
 		String[] lines = text.split("\r\n|\r|\n");
 		
 		notas = new ArrayList<>();

@@ -6,16 +6,16 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class ParserBovespa implements Parser {
+public class ParserNotaBovespa implements ParserNota {
 	
 	private ArrayList<NotaNegociacao> notas;
 
-	public ParserBovespa() {
+	public ParserNotaBovespa() {
 		notas = new ArrayList<NotaNegociacao>();
 	}
 
 	@Override
-	public Parser find(String text) {
+	public ParserNota find(String text) {
 		String [] lines = text.split("\r\n|\r|\n");
 		
 		notas = new ArrayList<NotaNegociacao>();

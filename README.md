@@ -6,8 +6,10 @@ Fork de https://github.com/davidboto/SinacorPdfParser/.
 
 ## Alterações realizadas
 
-* Uso do Maven
-* Refatorado para facilitar o uso deste projeto em outros
-* Testes unitários. Não deixei os arquivos .pdf por terem informações particulares.
-* Uso do lombok.
-* Uso de camelCase e BigDecimal em vez de Double por ter melhor precisão numérica.
+* Melhorias de projeto
+  * Uso do Maven
+  * Refatorado para facilitar o uso deste projeto em outros
+  * Uso do lombok.
+  * Uso de camelCase e BigDecimal em vez de Double por ter melhor precisão numérica.
+* Inclusão de Testes unitários 
+  * **IMPORTANTE:** Não deixei os arquivos .pdf e seus .json (valores esperados nos testes) por terem informações particulares.

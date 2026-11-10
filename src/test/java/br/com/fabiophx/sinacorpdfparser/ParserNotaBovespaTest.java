@@ -15,6 +15,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertInstanceOf;
 
+// @Disabled("Desabilitado pois necessita de arquivos de nota em .pdf e seu respectivo json com os valores esperados")
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class ParserNotaBovespaTest {
 

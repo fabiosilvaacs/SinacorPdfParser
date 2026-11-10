@@ -11,6 +11,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 public class ParserNotaUtils {
 
+    // Retorna um objeto de NotaNegociacao com os dados contidos no .json de mesmo nome do arquivo da nota em .pdf
     public static <T> T readExpectedNota(String pdfResource, Class<T> notaType)
             throws IOException, URISyntaxException {
         String jsonResource = pdfResource.replaceFirst("\\.pdf$", ".json");

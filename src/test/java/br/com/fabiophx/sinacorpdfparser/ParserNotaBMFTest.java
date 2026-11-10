@@ -15,6 +15,7 @@ import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
+// @Disabled("Desabilitado pois necessita de arquivos de nota em .pdf e seu respectivo json com os valores esperados")
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 class ParserNotaBMFTest {
 
